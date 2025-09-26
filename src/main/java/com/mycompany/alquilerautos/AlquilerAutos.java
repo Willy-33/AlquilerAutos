@@ -1,20 +1,21 @@
 package com.mycompany.alquilerautos;
 
-import java.util.Scanner;
-
 public class AlquilerAutos {
 
-    public static void main(String[] args) {
-        
-        Scanner scanner = new Scanner(System.in);
-        int opcionMenu;
-        
-        System.out.println("Bienvenido Al Programa De Alquiler De Autos");
+    public static void main(String[] args) {     
+        Menu.printBienvenida();
         
         do{
-            ImpresionMenu.printOpciones();
-            opcionMenu = scanner.nextInt();        
-        }while (opcionMenu != 0);
-        
+            Menu.printOpciones();
+            switch(Menu.opcionMenu){
+                case 0:
+                    Menu.printOpcion0();
+                    break;
+                default:
+                    Menu.printOpcionInvalida();
+                    break;
+            }
+        }while (Menu.opcionMenu != 0);        
     }
+    
 }
